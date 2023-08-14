@@ -35,13 +35,13 @@ function ADondeVamos() {
         }
 
         else {
-            alert("No conozco un restaurante para esa comida, proximamente cargaremos nuevos lugares"); return;
+            alert("No conozco un restaurante para esa comida, próximamente cargaremos nuevos lugares"); return;
         }
 
     } while (!restaurante);
 
 
-    alert("Te recomiendo ir a  " + restaurante + " para comer:  " + comida); return;
+    alert("Te recomiendo ir a " + restaurante + " para comer: " + comida); return;
 
 }
 
