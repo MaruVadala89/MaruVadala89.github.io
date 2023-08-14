@@ -2,7 +2,6 @@ function ADondeVamos()  {
 let restaurante;
 let comida = prompt("¿Que comida te haria feliz hoy?");
 
-
         do 
         
         {  
@@ -40,11 +39,11 @@ let comida = prompt("¿Que comida te haria feliz hoy?");
 
         if (comida !== null) {
 
-            alert ("Te recomiendo ir a  " + restaurante + " para comer:  " + comida); 
+            alert ("Te recomiendo ir a  " + restaurante + " para comer:  " + comida); return;
         }
         else {
 
-            alert ("Cancelaste el pedido de recomendacion")
+            alert ("Cancelaste el pedido de recomendacion"); return;
         }
  
 
