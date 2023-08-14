@@ -1,53 +1,49 @@
-function ADondeVamos()  {
-let restaurante;
-let comida = prompt("¿Que comida te haria feliz hoy?");
+function ADondeVamos() {
+    let restaurante;
+    let comida = prompt("¿Que comida te haria feliz hoy?");
 
-        do 
-        
-        {  
-    
-            if (comida === "sushi") {
-                restaurante = "Tokin";
-            }
+    do {
 
-            else if (comida === "pasta") {
-                restaurante = "San Pietro"
-            }
+        if (comida === null) {
 
-            else if (comida === "pizza") {
-                restaurante = "Il Forno de Marco";
-            }
+            alert("Cancelaste el pedido de recomendacion"); return;
 
-            else if (comida === "ceviche") {
-                restaurante = "Sabores del peru";
-            }
-
-            else if (comida === "ramen") {
-                restaurante = "Nakama";
-            }
-
-            else if (comida === "empanadas") {
-                restaurante = "La Vieja Esquina"
-            }
-
-            else {
-                alert("No conozco un restaurante para esa comida, proximamente cargaremos nuevos lugares"); return;
-            }
-
-        } while (!restaurante);
-
-
-        if (comida !== null) {
-
-            alert ("Te recomiendo ir a  " + restaurante + " para comer:  " + comida); return;
         }
+
+        else if (comida === "sushi") {
+            restaurante = "Tokin";
+        }
+
+        else if (comida === "pasta") {
+            restaurante = "San Pietro"
+        }
+
+        else if (comida === "pizza") {
+            restaurante = "Il Forno de Marco";
+        }
+
+        else if (comida === "ceviche") {
+            restaurante = "Sabores del peru";
+        }
+
+        else if (comida === "ramen") {
+            restaurante = "Nakama";
+        }
+
+        else if (comida === "empanadas") {
+            restaurante = "La Vieja Esquina";
+        }
+
         else {
-
-            alert ("Cancelaste el pedido de recomendacion"); return;
+            alert("No conozco un restaurante para esa comida, proximamente cargaremos nuevos lugares"); return;
         }
- 
 
-    }
+    } while (!restaurante);
 
 
-    ADondeVamos();
+    alert("Te recomiendo ir a  " + restaurante + " para comer:  " + comida); return;
+
+}
+
+
+ADondeVamos();
