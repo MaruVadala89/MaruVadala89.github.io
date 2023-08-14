@@ -1,41 +1,54 @@
-function ADondeVamos() 
+function ADondeVamos()  {
+let restaurante;
+let comida = prompt("¿Que comida te haria feliz hoy?");
 
-{
-
-    let restaurante;
-    const comida = prompt("¿Que comida te haria feliz hoy?");
-    console.log (comida)
 
         do 
         
         {  
     
-            if (comida == "sushi") {
+            if (comida === "sushi") {
                 restaurante = "Tokin";
             }
 
-            else if (comida == "pasta") {
+            else if (comida === "pasta") {
                 restaurante = "San Pietro"
             }
 
-            else if (comida == "pizza") {
+            else if (comida === "pizza") {
                 restaurante = "Il Forno de Marco";
             }
 
-            else if (comida == "comida peruana") {
-                restaurante = "Sabores del peru"
+            else if (comida === "ceviche") {
+                restaurante = "Sabores del peru";
+            }
+
+            else if (comida === "ramen") {
+                restaurante = "Nakama";
+            }
+
+            else if (comida === "empanadas") {
+                restaurante = "La Vieja Esquina"
             }
 
             else {
-                alert("No conozco un restaurante para esa comida, proximamente cargaremos nuevos lugares")
+                alert("No conozco un restaurante para esa comida, proximamente cargaremos nuevos lugares"); return;
             }
 
         } while (!restaurante);
 
-        console.log ("Te recomiendo ir a  " + restaurante + " para comer la/el mejor " + comida);
+
+        if (comida !== null) {
+
+            alert ("Te recomiendo ir a  " + restaurante + " para comer:  " + comida); 
+        }
+        else {
+
+            alert ("Cancelaste el pedido de recomendacion")
+        }
+ 
 
     }
 
-  
 
     ADondeVamos();
