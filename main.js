@@ -1,43 +1,41 @@
-function ADondeVamos () {
+function ADondeVamos() 
 
-do {
-    const comida = prompt ("¿Que comida te haria feliz hoy?");
+{
+
     let restaurante;
+    const comida = prompt("¿Que comida te haria feliz hoy?");
+    console.log (comida)
 
-    if (comida === "sushi") {
-        restaurante = "Tokin"; }
-
-    else if (comida === "pasta") {
-        restaurante = "San Pietro"}
-
-    else if (comida === "pizza") {
-        restaurante ="Il Forno de Marco";}
-
-    else if (comida === "comida peruana") {
-        restaurante = "Sabores del peru"}
+        do 
+        
+        {  
     
-    else {
-        alert ("Ups, No conozco un restaurante para esa comida, proximamente cargaremos nuevos lugares para tu deleite") }
+            if (comida == "sushi") {
+                restaurante = "Tokin";
+            }
 
-    } while (!restaurante);
+            else if (comida == "pasta") {
+                restaurante = "San Pietro"
+            }
 
-    console.log ("Te recomiendo ir a ${restaurante} para comer la/el mejor ${comida}")
+            else if (comida == "pizza") {
+                restaurante = "Il Forno de Marco";
+            }
 
-    ADondeVamos ()
+            else if (comida == "comida peruana") {
+                restaurante = "Sabores del peru"
+            }
 
+            else {
+                alert("No conozco un restaurante para esa comida, proximamente cargaremos nuevos lugares")
+            }
 
+        } while (!restaurante);
 
+        console.log ("Te recomiendo ir a  " + restaurante + " para comer la/el mejor " + comida);
 
+    }
 
+  
 
-
-
-
-
-
-
-
-
-
-
-}
+    ADondeVamos();
