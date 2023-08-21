@@ -1,6 +1,6 @@
 function ADondeVamos() {
     let restaurante;
-    let comida = prompt("¿Que comida te haria feliz hoy?");
+    let comida = prompt("¿Que comida te haria feliz hoy? Las opciones son:\n - Sushi \n - Pasta\n - Pizza\n - Ceviche\n - Ramen\n - Ramen");
 
     do {
 
