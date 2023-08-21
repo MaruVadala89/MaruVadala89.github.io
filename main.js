@@ -1,9 +1,7 @@
 function ADondeVamos() {
+    do {
     let restaurante;
     let comida = prompt("¿Que comida te haria feliz hoy? Las opciones son:\n - Sushi \n - Pasta\n - Pizza\n - Ceviche\n - Ramen\n - Ramen");
-
-
-    comida = comida.toLowerCase();
 
     if (comida === null) {
 
@@ -11,9 +9,11 @@ function ADondeVamos() {
         return;
     }
 
+    comida = comida.toLowerCase();
+
     switch (comida) {
         case "sushi":
-            restaurante = "tokin"
+            restaurante = "Tokin"
             break;
         case "pasta":
             restaurante = "San Pietro"
@@ -31,11 +31,19 @@ function ADondeVamos() {
             restaurante = "La Vieja Esquina"
             break;
         default:
-            alert("No conozco un restaurante para esa comida, próximamente cargaremos nuevos lugares"); return; }
+            alert("No conozco un restaurante para esa comida, próximamente cargaremos nuevos lugares"); 
+            continue; 
+        }
 
 
-    alert("Te recomiendo ir a " + restaurante + " para comer: " + comida); return;
+    const continuar = confirm("Te recomiendo ir a " + restaurante + " para comer: " + comida + "\n\n¿Deseas otra recomendacion?"); 
+    
+        if(!continuar) {
+            break;
+        }
 
+    } while (true);
+    
 }
 
 
