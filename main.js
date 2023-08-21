@@ -1,7 +1,7 @@
 function ADondeVamos() {
     do {
     let restaurante;
-    let comida = prompt("¿Que comida te haria feliz hoy? Las opciones son:\n - Sushi \n - Pasta\n - Pizza\n - Ceviche\n - Ramen\n - Ramen");
+    let comida = prompt("¿Que comida te haria feliz hoy? Las opciones son:\n - Sushi \n - Pasta\n - Pizza\n - Ceviche\n - Ramen\n - Empanadas");
 
     if (comida === null) {
 
