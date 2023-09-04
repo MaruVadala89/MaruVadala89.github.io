@@ -23,8 +23,7 @@ const productos = [
         deInterior: true,
         deExterior: false,
         precio: 7.080,
-        stock: 5,
-       
+        stock: 5, 
     },
 
     {
@@ -34,7 +33,7 @@ const productos = [
         deExterior: false,
         precio: 1.884,
         stock: 2,
-         },
+    },
 
     {
         id: 555,
@@ -42,8 +41,7 @@ const productos = [
         deInterior: true,
         deExterior: false,
         precio: 1.800,
-        stock: 34,
-        
+        stock: 0,    
     },
     {
         id: 666,
@@ -51,8 +49,7 @@ const productos = [
         deExterior: true,
         deInterior: false,
         precio: 358,
-        stock: 15,
-       
+        stock: 15,   
     },
     {
         id: 777,
@@ -60,8 +57,7 @@ const productos = [
         deExterior: true,
         deInterior: false,
         precio: 222,
-        stock: 30,
-       
+        stock: 30,  
     },
     {
         id: 888,
@@ -69,8 +65,7 @@ const productos = [
         deExterior: true,
         deInterior: false,
         precio: 1.584,
-        stock: 5,
-       
+        stock: 5,  
     },
 
     {
@@ -79,17 +74,15 @@ const productos = [
         deExterior: true,
         deInterior: false,
         precio: 3.965,
-        stock: 1,
-         },
-
+        stock: 0,
+    },
     {
         id: 1010,
         nombre: "Pensamiento",
         deExterior: true,
         deInterior: false,
         precio: 400,
-        stock: 60,
-        
+        stock: 0,   
     },
 
 ];
@@ -116,13 +109,35 @@ let opcion;
     switch (opcion) {
 
         case "0":
-            
+            alert ("Gracias por su visita. Vuelva pronto")
+            break
+        case "1":
+            verTodasLasPlantas ()
+            break
+        case "2":
+            verTodasLasDeInterior ()
+            break
+        case "3":
+            verTodasLasDeExterior ()
+            break
+        case "4":
+            verPlantasEnStock ()
+            break
+        default:
+            alert ("No es una opcion valida. Ingrese una de las opciones indicadas")
+            breake
     }
 
+    } while (opcion !== "0")
 
-    }
+ function nuevoMensaje (array, mensajeInicial)
+{
 
+let mensaje = mensajeInicial;
 
+array.forEach((el) => {mensaje += '${el.id}  '
+    
+});
 
 
 
