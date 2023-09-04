@@ -3,6 +3,7 @@ const productos = [
         id: 111,
         nombre: "Estrella Federal",
         deInterior: true,
+        deExterior: false,
         precio: 2.930,
         stock: 5,
        
@@ -11,6 +12,7 @@ const productos = [
         id: 222,
         nombre: "Ficus Pandurata",
         deInterior: true,
+        deExterior: false,
         precio: 10.800,
         stock: 30,
        
@@ -19,6 +21,7 @@ const productos = [
         id: 333,
         nombre: "Monstera",
         deInterior: true,
+        deExterior: false,
         precio: 7.080,
         stock: 5,
        
@@ -28,6 +31,7 @@ const productos = [
         id: 444,
         nombre: "Peperomia Tricolor",
         deInterior: true,
+        deExterior: false,
         precio: 1.884,
         stock: 2,
          },
@@ -36,6 +40,7 @@ const productos = [
         id: 555,
         nombre: "Palo de Agua",
         deInterior: true,
+        deExterior: false,
         precio: 1.800,
         stock: 34,
         
@@ -44,6 +49,7 @@ const productos = [
         id: 666,
         nombre: "Gazania",
         deExterior: true,
+        deInterior: false,
         precio: 358,
         stock: 15,
        
@@ -52,6 +58,7 @@ const productos = [
         id: 777,
         nombre: "Lazo del Amor",
         deExterior: true,
+        deInterior: false,
         precio: 222,
         stock: 30,
        
@@ -60,6 +67,7 @@ const productos = [
         id: 888,
         nombre: "Jazmin Kimura",
         deExterior: true,
+        deInterior: false,
         precio: 1.584,
         stock: 5,
        
@@ -69,6 +77,7 @@ const productos = [
         id: 999,
         nombre: "Agapantos Flor Blanca ",
         deExterior: true,
+        deInterior: false,
         precio: 3.965,
         stock: 1,
          },
@@ -77,6 +86,7 @@ const productos = [
         id: 1010,
         nombre: "Pensamiento",
         deExterior: true,
+        deInterior: false,
         precio: 400,
         stock: 60,
         
@@ -85,6 +95,23 @@ const productos = [
 ];
 
 class producto {
+
+    constructor (id, nombre, deExterior, deInterior, precio, stock)
+    {
+        this.id = id
+        this.nombre = nombre
+        this.deExterior = deExterior
+        this.deInterior = deInterior
+        this.precio = precio
+        this.stock = stock 
+
+    }
+
+}
+
+let opcion {
+
+
 
 
 
