@@ -41,54 +41,55 @@ const productos = [
         
     },
     {
-        id: 111,
+        id: 666,
         nombre: "Gazania",
-        deInterior: false,
+        deExterior: true,
         precio: 358,
-        stock: 5,
+        stock: 15,
        
     },
     {
-        id: 222,
-        nombre: "Ficus Pandurata",
-        deInterior: true,
-        precio: 10.800,
+        id: 777,
+        nombre: "Lazo del Amor",
+        deExterior: true,
+        precio: 222,
         stock: 30,
        
     },
     {
-        id: 333,
-        nombre: "Monstera",
-        deInterior: true,
-        precio: 7.080,
+        id: 888,
+        nombre: "Jazmin Kimura",
+        deExterior: true,
+        precio: 1.584,
         stock: 5,
        
     },
 
     {
-        id: 444,
-        nombre: "Peperomia Tricolor",
-        deInterior: true,
-        precio: 1.884,
-        stock: 2,
+        id: 999,
+        nombre: "Agapantos Flor Blanca ",
+        deExterior: true,
+        precio: 3.965,
+        stock: 1,
          },
 
     {
-        id: 555,
-        nombre: "Palo de Agua",
-        deInterior: true,
-        precio: 1.800,
-        stock: 34,
+        id: 1010,
+        nombre: "Pensamiento",
+        deExterior: true,
+        precio: 400,
+        stock: 60,
         
     },
-  
-
-
-
 
 ];
 
+class producto {
 
+
+
+    
+}
 
 
 
