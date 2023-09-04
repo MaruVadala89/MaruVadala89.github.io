@@ -109,13 +109,24 @@ class producto {
 
 }
 
-let opcion {
+let opcion; 
+
+    do { opcion = prompt ("Ingrese una opcion:\n\n1. Ver todas las plantas\n2.Ver plantas de interior\n3.Ver plantas de exterior\n4. Ver plantas en stock\n\n pulse 0 para salir")
+
+    switch (opcion) {
+
+        case "0":
+            
+    }
+
+
+    }
 
 
 
 
 
-    
+
 }
 
 
