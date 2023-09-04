@@ -1,4 +1,4 @@
-const productos = [
+const plantas = [
     {
         id: 111,
         nombre: "Estrella Federal",
@@ -6,7 +6,7 @@ const productos = [
         deExterior: false,
         precio: 2.930,
         stock: 5,
-       
+
     },
     {
         id: 222,
@@ -15,7 +15,7 @@ const productos = [
         deExterior: false,
         precio: 10.800,
         stock: 30,
-       
+
     },
     {
         id: 333,
@@ -23,7 +23,7 @@ const productos = [
         deInterior: true,
         deExterior: false,
         precio: 7.080,
-        stock: 5, 
+        stock: 5,
     },
 
     {
@@ -41,7 +41,7 @@ const productos = [
         deInterior: true,
         deExterior: false,
         precio: 1.800,
-        stock: 0,    
+        stock: 0,
     },
     {
         id: 666,
@@ -49,7 +49,7 @@ const productos = [
         deExterior: true,
         deInterior: false,
         precio: 358,
-        stock: 15,   
+        stock: 15,
     },
     {
         id: 777,
@@ -57,7 +57,7 @@ const productos = [
         deExterior: true,
         deInterior: false,
         precio: 222,
-        stock: 30,  
+        stock: 30,
     },
     {
         id: 888,
@@ -65,7 +65,7 @@ const productos = [
         deExterior: true,
         deInterior: false,
         precio: 1.584,
-        stock: 5,  
+        stock: 5,
     },
 
     {
@@ -82,66 +82,90 @@ const productos = [
         deExterior: true,
         deInterior: false,
         precio: 400,
-        stock: 0,   
+        stock: 0,
     },
 
 ];
 
-class producto {
+class planta {
 
-    constructor (id, nombre, deExterior, deInterior, precio, stock)
-    {
+    constructor(id, nombre, deExterior, deInterior, precio, stock) {
         this.id = id
         this.nombre = nombre
         this.deExterior = deExterior
         this.deInterior = deInterior
         this.precio = precio
-        this.stock = stock 
+        this.stock = stock
 
     }
 
 }
 
-let opcion; 
+let opcion;
 
-    do { opcion = prompt ("Ingrese una opcion:\n\n1. Ver todas las plantas\n2.Ver plantas de interior\n3.Ver plantas de exterior\n4. Ver plantas en stock\n\n pulse 0 para salir")
+do {
+    opcion = prompt("Ingrese una opcion:\n\n1. Ver todas las plantas\n2.Ver plantas de interior\n3.Ver plantas de exterior\n4. Ver plantas en stock\n\n pulse 0 para salir")
 
     switch (opcion) {
 
         case "0":
-            alert ("Gracias por su visita. Vuelva pronto")
+            alert("Gracias por su visita. Vuelva pronto")
             break
         case "1":
-            verTodasLasPlantas ()
+            verTodasLasPlantas()
             break
         case "2":
-            verTodasLasDeInterior ()
+            verTodasLasDeInterior()
             break
         case "3":
-            verTodasLasDeExterior ()
+            verTodasLasDeExterior()
             break
         case "4":
-            verPlantasEnStock ()
+            verPlantasEnStock()
             break
         default:
-            alert ("No es una opcion valida. Ingrese una de las opciones indicadas")
+            alert("No es una opcion valida. Ingrese una de las opciones indicadas")
             breake
     }
 
-    } while (opcion !== "0")
+} while (opcion !== "0")
 
- function nuevoMensaje (array, mensajeInicial)
+function nuevoMensaje(lista, mensajeInicial) {
+
+    let mensaje = mensajeInicial;
+
+    lista.forEach((el) => { mensaje += `${el.id})  ${el.nombre} - Precio: $${el.precio}` });
+
+    return mensaje;
+
+} 
+
+function verTodasLasPlantas ()
 {
+    let mensaje = nuevoMensaje (plantas, "Estas son todas nuestras plantas: \n\n")
+    alert(mensaje);
+}
 
-let mensaje = mensajeInicial;
+function verTodasLasDeInterior ()
+{
+    let plantasDeInterior = plantas.filter((el) => el.deInterior);
+    let mensaje = nuevoMensaje (plantasDeInterior, "Estas son nuestras plantas de interior");
+    alert(mensaje);
+}
 
-array.forEach((el) => {mensaje += '${el.id}  '
-    
-});
 
+function verTodasLasDeExterior ()
+{
+    let plantasDeExterior = plantas.filter((el) => el.deExterior);
+    let mensaje = nuevoMensaje (plantasDeExterior, "Estas son nuestras plantas de Exterior");
+    alert(mensaje);
+}
 
-
-
+function verPlantasEnStock ()
+{
+    let plantasEnStock = plantas.filter ((el) => el.stock !== 0);
+    let mensaje = nuevoMensaje (plantasEnStock, "Estas son nuestras planta en stock")
+    alert(mensaje);
 }
 
 
