@@ -1,3 +1,104 @@
+const productos = [
+    {
+        id: 111,
+        nombre: "Estrella Federal",
+        deInterior: true,
+        precio: 2.930,
+        stock: 5,
+       
+    },
+    {
+        id: 222,
+        nombre: "Ficus Pandurata",
+        deInterior: true,
+        precio: 10.800,
+        stock: 30,
+       
+    },
+    {
+        id: 333,
+        nombre: "Monstera",
+        deInterior: true,
+        precio: 7.080,
+        stock: 5,
+       
+    },
+
+    {
+        id: 444,
+        nombre: "Peperomia Tricolor",
+        deInterior: true,
+        precio: 1.884,
+        stock: 2,
+         },
+
+    {
+        id: 555,
+        nombre: "Palo de Agua",
+        deInterior: true,
+        precio: 1.800,
+        stock: 34,
+        
+    },
+    {
+        id: 111,
+        nombre: "Gazania",
+        deInterior: false,
+        precio: 358,
+        stock: 5,
+       
+    },
+    {
+        id: 222,
+        nombre: "Ficus Pandurata",
+        deInterior: true,
+        precio: 10.800,
+        stock: 30,
+       
+    },
+    {
+        id: 333,
+        nombre: "Monstera",
+        deInterior: true,
+        precio: 7.080,
+        stock: 5,
+       
+    },
+
+    {
+        id: 444,
+        nombre: "Peperomia Tricolor",
+        deInterior: true,
+        precio: 1.884,
+        stock: 2,
+         },
+
+    {
+        id: 555,
+        nombre: "Palo de Agua",
+        deInterior: true,
+        precio: 1.800,
+        stock: 34,
+        
+    },
+  
+
+
+
+
+];
+
+
+
+
+
+
+
+
+
+
+
+/*
 function ADondeVamos() {
     do {
     let restaurante;
@@ -48,3 +149,4 @@ function ADondeVamos() {
 
 
 ADondeVamos();
+*/
