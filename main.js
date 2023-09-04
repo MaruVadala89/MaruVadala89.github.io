@@ -1,50 +1,50 @@
 const plantas = [
     {
-        id: 111,
+        id: 1,
         nombre: "Estrella Federal",
         deInterior: true,
         deExterior: false,
-        precio: 2.930,
+        precio: 2930,
         stock: 5,
 
     },
     {
-        id: 222,
+        id: 2,
         nombre: "Ficus Pandurata",
         deInterior: true,
         deExterior: false,
-        precio: 10.800,
+        precio: 10800,
         stock: 30,
 
     },
     {
-        id: 333,
+        id: 3,
         nombre: "Monstera",
         deInterior: true,
         deExterior: false,
-        precio: 7.080,
+        precio: 7080,
         stock: 5,
     },
 
     {
-        id: 444,
+        id: 4,
         nombre: "Peperomia Tricolor",
         deInterior: true,
         deExterior: false,
-        precio: 1.884,
+        precio: 1884,
         stock: 2,
     },
 
     {
-        id: 555,
+        id: 5,
         nombre: "Palo de Agua",
         deInterior: true,
         deExterior: false,
-        precio: 1.800,
+        precio: 1800,
         stock: 0,
     },
     {
-        id: 666,
+        id: 6,
         nombre: "Gazania",
         deExterior: true,
         deInterior: false,
@@ -52,7 +52,7 @@ const plantas = [
         stock: 15,
     },
     {
-        id: 777,
+        id: 7,
         nombre: "Lazo del Amor",
         deExterior: true,
         deInterior: false,
@@ -60,24 +60,24 @@ const plantas = [
         stock: 30,
     },
     {
-        id: 888,
+        id: 8,
         nombre: "Jazmin Kimura",
         deExterior: true,
         deInterior: false,
-        precio: 1.584,
+        precio: 1584,
         stock: 5,
     },
 
     {
-        id: 999,
+        id: 9,
         nombre: "Agapantos Flor Blanca ",
         deExterior: true,
         deInterior: false,
-        precio: 3.965,
+        precio: 3965,
         stock: 0,
     },
     {
-        id: 1010,
+        id: 10,
         nombre: "Pensamiento",
         deExterior: true,
         deInterior: false,
@@ -104,7 +104,7 @@ class planta {
 let opcion;
 
 do {
-    opcion = prompt("Ingrese una opcion:\n\n1. Ver todas las plantas\n2.Ver plantas de interior\n3.Ver plantas de exterior\n4. Ver plantas en stock\n\n pulse 0 para salir")
+    opcion = prompt("¿Que planta queres adoptar hoy?. Ingresa una opción:\n\n1. Ver todas las plantas\n2.Ver plantas de interior\n3.Ver plantas de exterior\n4. Ver plantas en stock\n\n pulse 0 para salir")
 
     switch (opcion) {
 
@@ -134,7 +134,8 @@ function nuevoMensaje(lista, mensajeInicial) {
 
     let mensaje = mensajeInicial;
 
-    lista.forEach((el) => { mensaje += `${el.id})  ${el.nombre} - Precio: $${el.precio}` });
+    lista.forEach((el) => { 
+        mensaje += `${el.id})  ${el.nombre} - Precio: $${el.precio}\n` });
 
     return mensaje;
 
