@@ -1,6 +1,6 @@
 const plantas = [
     {
-        id: 1,
+        id: "(est)",
         nombre: "Estrella Federal",
         deInterior: true,
         deExterior: false,
@@ -9,7 +9,7 @@ const plantas = [
 
     },
     {
-        id: 2,
+        id: "(fic)",
         nombre: "Ficus Pandurata",
         deInterior: true,
         deExterior: false,
@@ -18,7 +18,7 @@ const plantas = [
 
     },
     {
-        id: 3,
+        id: "(mon)",
         nombre: "Monstera",
         deInterior: true,
         deExterior: false,
@@ -27,7 +27,7 @@ const plantas = [
     },
 
     {
-        id: 4,
+        id: "(pep)",
         nombre: "Peperomia Tricolor",
         deInterior: true,
         deExterior: false,
@@ -36,7 +36,7 @@ const plantas = [
     },
 
     {
-        id: 5,
+        id: "(pal)",
         nombre: "Palo de Agua",
         deInterior: true,
         deExterior: false,
@@ -44,7 +44,7 @@ const plantas = [
         stock: 0,
     },
     {
-        id: 6,
+        id: "(gaza)",
         nombre: "Gazania",
         deExterior: true,
         deInterior: false,
@@ -52,7 +52,7 @@ const plantas = [
         stock: 15,
     },
     {
-        id: 7,
+        id: "(lazo)",
         nombre: "Lazo del Amor",
         deExterior: true,
         deInterior: false,
@@ -60,7 +60,7 @@ const plantas = [
         stock: 30,
     },
     {
-        id: 8,
+        id: "(jaz)",
         nombre: "Jazmin Kimura",
         deExterior: true,
         deInterior: false,
@@ -69,7 +69,7 @@ const plantas = [
     },
 
     {
-        id: 9,
+        id: "(aga)",
         nombre: "Agapantos Flor Blanca ",
         deExterior: true,
         deInterior: false,
@@ -77,7 +77,7 @@ const plantas = [
         stock: 0,
     },
     {
-        id: 10,
+        id: "(pen)",
         nombre: "Pensamiento",
         deExterior: true,
         deInterior: false,
@@ -109,7 +109,7 @@ do {
     switch (opcion) {
 
         case "0":
-            alert("Gracias por su visita. Vuelva pronto")
+            alert("Gracias por visitarnos. ¡Te esperamos pronto!")
             break
         case "1":
             verTodasLasPlantas()
@@ -135,7 +135,7 @@ function nuevoMensaje(lista, mensajeInicial) {
     let mensaje = mensajeInicial;
 
     lista.forEach((el) => { 
-        mensaje += `${el.id})  ${el.nombre} - Precio: $${el.precio}\n` });
+        mensaje += `${el.id} - ${el.nombre} - Precio: $${el.precio}\n` });
 
     return mensaje;
 
@@ -150,7 +150,7 @@ function verTodasLasPlantas ()
 function verTodasLasDeInterior ()
 {
     let plantasDeInterior = plantas.filter((el) => el.deInterior);
-    let mensaje = nuevoMensaje (plantasDeInterior, "Estas son nuestras plantas de interior");
+    let mensaje = nuevoMensaje (plantasDeInterior, "Estas son nuestras plantas de interior: \n\n");
     alert(mensaje);
 }
 
@@ -158,22 +158,16 @@ function verTodasLasDeInterior ()
 function verTodasLasDeExterior ()
 {
     let plantasDeExterior = plantas.filter((el) => el.deExterior);
-    let mensaje = nuevoMensaje (plantasDeExterior, "Estas son nuestras plantas de Exterior");
+    let mensaje = nuevoMensaje (plantasDeExterior, "Estas son nuestras plantas de Exterior: \n\n");
     alert(mensaje);
 }
 
 function verPlantasEnStock ()
 {
     let plantasEnStock = plantas.filter ((el) => el.stock !== 0);
-    let mensaje = nuevoMensaje (plantasEnStock, "Estas son nuestras planta en stock")
+    let mensaje = nuevoMensaje (plantasEnStock, "Estas son nuestras planta en stock: \n\n")
     alert(mensaje);
 }
-
-
-
-
-
-
 
 
 
