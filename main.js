@@ -125,7 +125,7 @@ do {
             break
         default:
             alert("No es una opcion valida. Ingrese una de las opciones indicadas")
-            breake
+            break
     }
 
 } while (opcion !== "0")
