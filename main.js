@@ -1,5 +1,6 @@
 let containerDeProductos = document.getElementById("containerDeProductos");
 
+let carrito = [];
 
 plantas.forEach((el) => {
     let card = document.createElement("div");
@@ -26,6 +27,12 @@ plantas.forEach((el) => {
     containerDeProductos.appendChild(card);
 
 });
+
+
+
+
+
+
 
 
 
