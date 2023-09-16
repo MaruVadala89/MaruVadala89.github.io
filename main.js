@@ -1,92 +1,70 @@
-const plantas = [
-    {
-        id: "(est)",
-        nombre: "Estrella Federal",
-        deInterior: true,
-        deExterior: false,
-        precio: 2930,
-        stock: 5,
+let containerDeProductos = document.getElementById("containerDeProductos");
 
-    },
-    {
-        id: "(fic)",
-        nombre: "Ficus Pandurata",
-        deInterior: true,
-        deExterior: false,
-        precio: 10800,
-        stock: 30,
 
-    },
-    {
-        id: "(mon)",
-        nombre: "Monstera",
-        deInterior: true,
-        deExterior: false,
-        precio: 7080,
-        stock: 5,
-    },
+plantas.forEach((el) => {
+    let card = document.createElement("div");
+    card.className = "product-card";
 
-    {
-        id: "(pep)",
-        nombre: "Peperomia Tricolor",
-        deInterior: true,
-        deExterior: false,
-        precio: 1884,
-        stock: 2,
-    },
+    let title = document.createElement("h3");
+    title.innerText = `Nombre: ${el.nombre}`;
 
-    {
-        id: "(pal)",
-        nombre: "Palo de Agua",
-        deInterior: true,
-        deExterior: false,
-        precio: 1800,
-        stock: 0,
-    },
-    {
-        id: "(gaza)",
-        nombre: "Gazania",
-        deExterior: true,
-        deInterior: false,
-        precio: 358,
-        stock: 15,
-    },
-    {
-        id: "(lazo)",
-        nombre: "Lazo del Amor",
-        deExterior: true,
-        deInterior: false,
-        precio: 222,
-        stock: 30,
-    },
-    {
-        id: "(jaz)",
-        nombre: "Jazmin Kimura",
-        deExterior: true,
-        deInterior: false,
-        precio: 1584,
-        stock: 5,
-    },
+    card.appendChild(title);
 
-    {
-        id: "(aga)",
-        nombre: "Agapantos Flor Blanca ",
-        deExterior: true,
-        deInterior: false,
-        precio: 3965,
-        stock: 0,
-    },
-    {
-        id: "(pen)",
-        nombre: "Pensamiento",
-        deExterior: true,
-        deInterior: false,
-        precio: 400,
-        stock: 0,
-    },
+    let price = document.createElement("p");
+    price.innerText = `Precio: $${el.precio}`;
 
-];
+    card.appendChild(price);
 
+    let buttonAdd = document.createElement("button");
+    buttonAdd.innerText = `Agregar al carrito`;
+    buttonAdd.className = "btn-secundario";
+
+    buttonAdd.onclick = () => agregarAlCarrito(el.id);
+
+    card.appendChild(buttonAdd);
+
+    containerDeProductos.appendChild(card);
+
+});
+
+function agregarAlCarrito (id) {
+
+    console.log (id);
+    
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 class planta {
 
     constructor(id, nombre, deExterior, deInterior, precio, stock) {
@@ -169,7 +147,7 @@ function verPlantasEnStock ()
     alert(mensaje);
 }
 
-
+*/
 
 /*
 function ADondeVamos() {

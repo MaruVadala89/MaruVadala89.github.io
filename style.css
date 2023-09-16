@@ -1,0 +1,17 @@
+
+html {font-size: 62.5%;}
+body {font-size: 16px;}
+
+
+.btn-primario {
+    background-color: darkblue;
+    color:aliceblue;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    border: none;
+    text-decoration: none;
+}
+
+.btn-primario:hover {
+    cursor: pointer;
+}
