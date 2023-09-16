@@ -1,5 +1,5 @@
-/*function agregarAlCarrito (id) {
+function agregarAlCarrito(id){
 
 console.log (id);
 
-};*/
+};
