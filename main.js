@@ -28,7 +28,14 @@ plantas.forEach((el) => {
 
 });
 
+let btnMostrar = document.getElementById ("btnMostrar");
+let btnOcultar = document.getElementById ("btnOcultar");
+let btnLimpiar = document.getElementById ("btnLimpiar");
 
+
+btnMostrar.onclick = mostrarCarrito; 
+btnOcultar.onclick = ocultarCarrito;
+btnLimpiar.onclick = limpiarCarrito;
 
 
 

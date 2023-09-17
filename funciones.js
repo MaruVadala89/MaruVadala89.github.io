@@ -14,6 +14,45 @@ if (carrito.some((el) => el.id === id)) { /*Verificamos si la planta esta en el 
   
 }
 
+function mostrarCarrito () {
+let divCarrito = document.getElementById ("cart");
+divCarrito.innerHTML = ""; /*Limpio el carrito, para que no se muestren indefinidamente productos en la pagina*/
+carrito.forEach(el => {  
+    
+    let card = document.createElement("div");
+    card.className = "product-card";
+
+    let title = document.createElement("h3");
+    title.innerText = `Nombre: ${el.nombre}`;
+
+    card.appendChild(title);
+
+    let price = document.createElement("p");
+    price.innerText = `Precio: $${el.precio}`;
+
+    card.appendChild(price);
+
+    let divCantidad = document.createElement("div");
+
+
+
+  
+
+    divCarrito.appendChild(card);
+
+})
+
+}
+
+function ocultarCarrito () {
+
+}
+
+function modificarCarrito () {}
+
+function limpiarCarrito () {console.log ("mostrar");}
+
+function finalizarCompra () {}
 
 
 
