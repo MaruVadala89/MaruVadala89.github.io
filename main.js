@@ -1,8 +1,6 @@
 let containerDeProductos = document.getElementById("containerDeProductos");
 
-let carrito = [];
-
-plantas.forEach((el) => {
+plantas.forEach((el,index) => {
     let card = document.createElement("div");
     card.className = "product-card";
 
@@ -20,13 +18,18 @@ plantas.forEach((el) => {
     buttonAdd.innerText = `Agregar al carrito`;
     buttonAdd.className = "btn-secundario";
 
-    buttonAdd.onclick = () => agregarAlCarrito(el.id);
+    buttonAdd.onclick = () => agregarAlCarrito(el.id)
 
     card.appendChild(buttonAdd);
 
     containerDeProductos.appendChild(card);
 
 });
+
+let carrito = [];
+
+
+
 
 let btnMostrar = document.getElementById ("btnMostrar");
 let btnOcultar = document.getElementById ("btnOcultar");
@@ -36,6 +39,7 @@ let btnLimpiar = document.getElementById ("btnLimpiar");
 btnMostrar.onclick = mostrarCarrito; 
 btnOcultar.onclick = ocultarCarrito;
 btnLimpiar.onclick = limpiarCarrito;
+
 
 
 

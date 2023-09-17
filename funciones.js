@@ -1,23 +1,27 @@
+
 function agregarAlCarrito(id) {
-   
-if (carrito.some((el) => el.id === id)) { /*Verificamos si la planta esta en el carrito*/ 
-    let index = carrito.findIndex(el => el.id === id); /*Si esta, busca en que posicion esta, y agregale una unidad mas*/ 
-    carrito[index].cantidad += 1;
-} else {
-    
-    let productoAAgregar = plantas.find((el) => el.id === id); /*Si no esta, busca la planta y agregale una unidad*/
-    carrito.push({
-        ...productoAAgregar,
-        cantidad: 1,
-    });
-}
-  
-}
+    if (carrito.some((el) => el.id === id)) {
+        let index = carrito.findIndex(el => el.id === id);  
+        carrito[index].cantidad += 1;
+    } else {
+        let productoAAgregar = plantas.find((el) => el.id === id);
+        carrito.push({
+            ...productoAAgregar,
+            cantidad: 1,
+        });
+    }
+
+    mostrarCarrito ();
+};
+
 
 function mostrarCarrito () {
-let divCarrito = document.getElementById ("cart");
-divCarrito.innerHTML = ""; /*Limpio el carrito, para que no se muestren indefinidamente productos en la pagina*/
-carrito.forEach(el => {  
+
+let divCarrito = document.getElementById("cart");
+
+divCarrito.innerHTML = ""; 
+
+carrito.forEach((el, index) => {  
     
     let card = document.createElement("div");
     card.className = "product-card";
@@ -35,36 +39,49 @@ carrito.forEach(el => {
     let divCantidad = document.createElement("div");
     divCantidad.className = "div-cantidad"
 
-    let menos = document.createElement ("button")
+    let menos = document.createElement ("button");
     menos.innerText = "-"
 
-    let cantidad = document.createElement ("p")
+    menos.onclick = () => modificarCarrito (index, "-");
+
+    let cantidad = document.createElement ("p");
     cantidad.innerText = `Cantidad: ${el.cantidad}`
-    
-    let mas = document.createElement ("button")
+
+    let mas = document.createElement ("button");
     mas.innerText = "+"
 
+    mas.onclick = () => modificarCarrito (index, "+");
+
     divCantidad.appendChild(menos);
-    divCantidad.appendChild(mas);
     divCantidad.appendChild(cantidad);
+    divCantidad.appendChild(mas);
 
     card.appendChild(divCantidad);
 
-    divCarrito.appendChild(card);
-
-})
+    divCarrito.appendChild(card); })
 
 }
 
 function ocultarCarrito () {
-
 }
 
-function modificarCarrito () {}
+function limpiarCarrito () {
+}
 
-function limpiarCarrito () {console.log ("mostrar");}
 
-function finalizarCompra () {}
+
+function modificarCarrito (index, op) {
+    if (op === "-") {
+        carrito[index].cantidad -= 1;
+    } else {
+        carrito[index].cantidad += 1;
+    };
+
+    mostrarCarrito();
+};
+
+
+
 
 
 
