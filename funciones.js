@@ -33,10 +33,16 @@ carrito.forEach(el => {
     card.appendChild(price);
 
     let divCantidad = document.createElement("div");
+    let menos = document.createElement ("button")
+    menos.innerText = "-"
+    let cantidad = document.createElement ("p")
+    cantidad.innerText = `Cantidad: ${el.cantidad}`
+    let mas = document.createElement ("button")
+    mas.innerText = "+"
 
 
 
-  
+
 
     divCarrito.appendChild(card);
 
