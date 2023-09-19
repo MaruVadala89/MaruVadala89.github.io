@@ -91,9 +91,11 @@ function eliminarProducto(index) {
 }
 
 
-
 function ocultarCarrito () {
+    carrito.innerHTML = "";
 }
+
+ocultarCarrito ();
 
 function limpiarCarrito () {
 }
