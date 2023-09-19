@@ -11,6 +11,8 @@ function agregarAlCarrito(id) {
         });
     }
 
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
     mostrarCarrito ();
 };
 
@@ -41,7 +43,6 @@ carrito.forEach((el, index) => {
 
     let menos = document.createElement ("button");
     menos.innerText = "-"
-
     menos.onclick = () => modificarCarrito (index, "-");
 
     let cantidad = document.createElement ("p");
@@ -49,23 +50,29 @@ carrito.forEach((el, index) => {
 
     let mas = document.createElement ("button");
     mas.innerText = "+"
-
     mas.onclick = () => modificarCarrito (index, "+");
+
+    let quitar = document.createElement ("button");
+    quitar.innerText = "Quitar"
+    quitar.onclick = () => eliminarProducto(index);
+
+    card.appendChild(quitar);
+
+ 
 
     divCantidad.appendChild(menos);
     divCantidad.appendChild(cantidad);
     divCantidad.appendChild(mas);
+    divCantidad.appendChild(quitar);
 
     card.appendChild(divCantidad);
 
     divCarrito.appendChild(card); })
-
 }
-
 
 function modificarCarrito (index, op) {
     if (op === "-") {
-        if(carrito[index].cantidad >1) {
+        if(carrito[index].cantidad > 1) {
             carrito[index].cantidad -= 1; 
         } else {
             carrito.splice(index, 1)
@@ -73,19 +80,20 @@ function modificarCarrito (index, op) {
     } else {
         carrito[index].cantidad += 1;
     };
-
+    localStorage.setItem("carrito", JSON.stringify(carrito));
     mostrarCarrito();
 };
+
+function eliminarProducto(index) {
+    carrito.splice(index,1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    mostrarCarrito ();
+}
+
+
 
 function ocultarCarrito () {
 }
 
 function limpiarCarrito () {
 }
-
-
-
-
-
-
-

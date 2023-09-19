@@ -26,10 +26,7 @@ plantas.forEach((el,index) => {
 
 });
 
-let carrito = [];
-
-
-
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 let btnMostrar = document.getElementById ("btnMostrar");
 let btnOcultar = document.getElementById ("btnOcultar");
