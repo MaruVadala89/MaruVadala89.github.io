@@ -62,17 +62,14 @@ carrito.forEach((el, index) => {
 
 }
 
-function ocultarCarrito () {
-}
-
-function limpiarCarrito () {
-}
-
-
 
 function modificarCarrito (index, op) {
     if (op === "-") {
-        carrito[index].cantidad -= 1;
+        if(carrito[index].cantidad >1) {
+            carrito[index].cantidad -= 1; 
+        } else {
+            carrito.splice(index, 1)
+        }
     } else {
         carrito[index].cantidad += 1;
     };
@@ -80,6 +77,11 @@ function modificarCarrito (index, op) {
     mostrarCarrito();
 };
 
+function ocultarCarrito () {
+}
+
+function limpiarCarrito () {
+}
 
 
 
