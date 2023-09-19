@@ -92,10 +92,14 @@ function eliminarProducto(index) {
 
 
 function ocultarCarrito () {
-    carrito.innerHTML = "";
+    let divCarrito = document.getElementById("cart");
+    divCarrito.innerHTML = "";
+    
 }
 
-ocultarCarrito ();
 
 function limpiarCarrito () {
+    carrito = [];
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    ocultarCarrito ();
 }
