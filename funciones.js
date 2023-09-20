@@ -1,7 +1,7 @@
 
 function agregarAlCarrito(id) {
     if (carrito.some((el) => el.id === id)) {
-        let index = carrito.findIndex(el => el.id === id);  
+        let index = carrito.findIndex(el => el.id === id);
         carrito[index].cantidad += 1;
     } else {
         let productoAAgregar = plantas.find((el) => el.id === id);
@@ -13,67 +13,68 @@ function agregarAlCarrito(id) {
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    mostrarCarrito ();
+    mostrarCarrito();
 };
 
 
-function mostrarCarrito () {
+function mostrarCarrito() {
 
-let divCarrito = document.getElementById("cart");
+    let divCarrito = document.getElementById("cart");
 
-divCarrito.innerHTML = ""; 
+    divCarrito.innerHTML = "";
 
-carrito.forEach((el, index) => {  
-    
-    let card = document.createElement("div");
-    card.className = "product-card";
+    carrito.forEach((el, index) => {
 
-    let title = document.createElement("h3");
-    title.innerText = `Nombre: ${el.nombre}`;
+        let card = document.createElement("div");
+        card.className = "product-card";
 
-    card.appendChild(title);
+        let title = document.createElement("h3");
+        title.innerText = `Nombre: ${el.nombre}`;
 
-    let price = document.createElement("p");
-    price.innerText = `Precio: $${el.precio}`;
+        card.appendChild(title);
 
-    card.appendChild(price);
+        let price = document.createElement("p");
+        price.innerText = `Precio: $${el.precio}`;
 
-    let divCantidad = document.createElement("div");
-    divCantidad.className = "div-cantidad"
+        card.appendChild(price);
 
-    let menos = document.createElement ("button");
-    menos.innerText = "-"
-    menos.onclick = () => modificarCarrito (index, "-");
+        let divCantidad = document.createElement("div");
+        divCantidad.className = "div-cantidad"
 
-    let cantidad = document.createElement ("p");
-    cantidad.innerText = `Cantidad: ${el.cantidad}`
+        let menos = document.createElement("button");
+        menos.innerText = "-"
+        menos.onclick = () => modificarCarrito(index, "-");
 
-    let mas = document.createElement ("button");
-    mas.innerText = "+"
-    mas.onclick = () => modificarCarrito (index, "+");
+        let cantidad = document.createElement("p");
+        cantidad.innerText = `Cantidad: ${el.cantidad}`
 
-    let quitar = document.createElement ("button");
-    quitar.innerText = "Quitar"
-    quitar.onclick = () => eliminarProducto(index);
+        let mas = document.createElement("button");
+        mas.innerText = "+"
+        mas.onclick = () => modificarCarrito(index, "+");
 
-    card.appendChild(quitar);
+        let quitar = document.createElement("button");
+        quitar.innerText = "Quitar"
+        quitar.onclick = () => eliminarProducto(index);
 
- 
+        card.appendChild(quitar);
 
-    divCantidad.appendChild(menos);
-    divCantidad.appendChild(cantidad);
-    divCantidad.appendChild(mas);
-    divCantidad.appendChild(quitar);
 
-    card.appendChild(divCantidad);
 
-    divCarrito.appendChild(card); })
+        divCantidad.appendChild(menos);
+        divCantidad.appendChild(cantidad);
+        divCantidad.appendChild(mas);
+        divCantidad.appendChild(quitar);
+
+        card.appendChild(divCantidad);
+
+        divCarrito.appendChild(card);
+    })
 }
 
-function modificarCarrito (index, op) {
+function modificarCarrito(index, op) {
     if (op === "-") {
-        if(carrito[index].cantidad > 1) {
-            carrito[index].cantidad -= 1; 
+        if (carrito[index].cantidad > 1) {
+            carrito[index].cantidad -= 1;
         } else {
             carrito.splice(index, 1)
         }
@@ -85,21 +86,42 @@ function modificarCarrito (index, op) {
 };
 
 function eliminarProducto(index) {
-    carrito.splice(index,1);
+    carrito.splice(index, 1);
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    mostrarCarrito ();
+    mostrarCarrito();
 }
 
 
-function ocultarCarrito () {
+function ocultarCarrito() {
     let divCarrito = document.getElementById("cart");
     divCarrito.innerHTML = "";
-    
+
 }
 
 
-function limpiarCarrito () {
-    carrito = [];
-    localStorage.setItem("carrito", JSON.stringify(carrito))
-    ocultarCarrito ();
+function limpiarCarrito() {
+
+    Swal.fire({
+        title: '¿Está seguro de eliminar el carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, seguro',
+        cancelButtonText: 'No, no quiero'
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+            carrito = [];
+            localStorage.setItem("carrito", JSON.stringify(carrito))
+
+            Swal.fire({
+                title: 'Borrado!',
+                icon: 'success',
+                text: 'El carrito ha sido borrado'
+            })
+            
+            mostrarCarrito();
+        };
+    })
+
+    
 }
