@@ -1,6 +1,12 @@
 let containerDeProductos = document.getElementById("containerDeProductos");
 
-plantas.forEach((el,index) => {
+containerDeProductos.innerText = `<span class="loader"></span>`
+
+traerPlantas().then(response => { 
+containerDeProductos.innerHTML = ""
+
+response.forEach((el,index) => {
+    
     let card = document.createElement("div");
     card.className = "product-card";
 
@@ -24,7 +30,10 @@ plantas.forEach((el,index) => {
 
     containerDeProductos.appendChild(card);
 
-});
+   });
+
+})
+   .catch(error => console.log(error));
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
