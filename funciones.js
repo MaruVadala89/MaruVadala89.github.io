@@ -1,10 +1,9 @@
 
-function agregarAlCarrito(id) {
+function agregarAlCarrito(id, productoAAgregar) {
     if (carrito.some((el) => el.id === id)) {
         let index = carrito.findIndex(el => el.id === id);
         carrito[index].cantidad += 1;
     } else {
-        let productoAAgregar = data.find((el) => el.id === id);
         carrito.push({
             ...productoAAgregar,
             cantidad: 1,
