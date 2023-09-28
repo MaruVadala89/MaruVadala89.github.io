@@ -1,8 +1,6 @@
 let containerDeProductos = document.getElementById("containerDeProductos");
 
 
-
-
 async function cargarProductos () {
 
     containerDeProductos.innerHTML = "";
@@ -45,16 +43,18 @@ async function cargarProductos () {
 
 cargarProductos ();
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
 let btnMostrar = document.getElementById ("btnMostrar");
 let btnOcultar = document.getElementById ("btnOcultar");
 let btnLimpiar = document.getElementById ("btnLimpiar");
+let btnFinalizar = document.getElementById ("btnFinalizar");
 
 
 btnMostrar.onclick = mostrarCarrito; 
 btnOcultar.onclick = ocultarCarrito;
 btnLimpiar.onclick = limpiarCarrito;
+btnFinalizar.onclick = finalizarCompra;
 
 
 

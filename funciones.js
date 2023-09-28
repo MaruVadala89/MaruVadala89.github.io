@@ -1,5 +1,5 @@
 async function agregarAlCarrito(id) {
-    const response = await fetch ("datos.json");
+    const response = await fetch("datos.json");
     const productos = await response.json();
 
 
@@ -7,20 +7,23 @@ async function agregarAlCarrito(id) {
         let index = carrito.findIndex(el => el.id === id);
         carrito[index].cantidad += 1;
     } else {
-       let productoAAgregar = productos.find((el) => el.id === id);
+        let productoAAgregar = productos.find((el) => el.id === id);
         carrito.push({
             ...productoAAgregar,
             cantidad: 1,
         });
     }
+    Toastify({
+
+        text: "Adoptaste una planta!",
+        duration: 3000,
+        style: { background: "linear-gradient(to right, #00b09b, #96c93d)" },
+    }).showToast();
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    mostrarCarrito ();
+    mostrarCarrito();
 
 };
-
-
 
 function mostrarCarrito() {
 
@@ -100,7 +103,6 @@ function eliminarProducto(index) {
 function ocultarCarrito() {
     let divCarrito = document.getElementById("cart");
     divCarrito.innerHTML = "";
-
 }
 
 
@@ -123,10 +125,24 @@ function limpiarCarrito() {
                 icon: 'success',
                 text: 'El carrito ha sido borrado'
             })
-            
+
             mostrarCarrito();
         };
     })
+}
 
-    
+function finalizarCompra() {
+    let precioTotal = carrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
+    limpiarCarrito()
+    mostrarCarrito();
+
+    Swal.fire({
+        title: 'Compra Finalizada',
+        text: '!Gracias por adoptar una plantita!',
+        icon: 'success',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, seguro',
+        cancelButtonText: 'No, no quiero'
+
+    });
 }
