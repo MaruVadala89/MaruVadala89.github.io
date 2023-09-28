@@ -1,9 +1,13 @@
+async function agregarAlCarrito(id) {
+    const response = await fetch ("datos.json");
+    const productos = await response.json();
 
-function agregarAlCarrito(id, productoAAgregar) {
+
     if (carrito.some((el) => el.id === id)) {
         let index = carrito.findIndex(el => el.id === id);
         carrito[index].cantidad += 1;
     } else {
+       let productoAAgregar = productos.find((el) => el.id === id);
         carrito.push({
             ...productoAAgregar,
             cantidad: 1,
@@ -12,8 +16,10 @@ function agregarAlCarrito(id, productoAAgregar) {
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    mostrarCarrito();
+    mostrarCarrito ();
+
 };
+
 
 
 function mostrarCarrito() {

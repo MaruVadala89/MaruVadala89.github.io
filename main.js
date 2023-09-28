@@ -1,5 +1,8 @@
 let containerDeProductos = document.getElementById("containerDeProductos");
 
+
+
+
 async function cargarProductos () {
 
     containerDeProductos.innerHTML = "";
@@ -41,7 +44,6 @@ async function cargarProductos () {
 }
 
 cargarProductos ();
-
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
