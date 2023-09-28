@@ -4,7 +4,7 @@ function agregarAlCarrito(id) {
         let index = carrito.findIndex(el => el.id === id);
         carrito[index].cantidad += 1;
     } else {
-        let productoAAgregar = plantas.find((el) => el.id === id);
+        let productoAAgregar = data.find((el) => el.id === id);
         carrito.push({
             ...productoAAgregar,
             cantidad: 1,

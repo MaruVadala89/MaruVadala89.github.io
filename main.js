@@ -1,14 +1,20 @@
 let containerDeProductos = document.getElementById("containerDeProductos");
 
-containerDeProductos.innerText = `<span class="loader"></span>`
+async function cargarProductos () {
 
-traerPlantas().then(response => { 
-containerDeProductos.innerHTML = ""
+    containerDeProductos.innerHTML = "";
 
-response.forEach((el,index) => {
+    const response = await fetch("datos.json");
+    const data = await response.json();
+
+    data.forEach((el,index) => {
     
     let card = document.createElement("div");
     card.className = "product-card";
+
+    /*let img = document.createElement("img");
+        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${idx + 1}.png`
+        card.appendChild(img);*/
 
     let title = document.createElement("h3");
     title.innerText = `Nombre: ${el.nombre}`;
@@ -32,8 +38,10 @@ response.forEach((el,index) => {
 
    });
 
-})
-   .catch(error => console.log(error));
+}
+
+cargarProductos ();
+
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
