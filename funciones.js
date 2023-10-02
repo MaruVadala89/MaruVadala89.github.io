@@ -134,8 +134,8 @@ function limpiarCarrito() {
 function finalizarCompra() {
     let precioTotal = carrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
 
-    mostrarCarrito ();
-    limpiarCarrito();
+
+
 
     Swal.fire({
         title: 'Compra Finalizada',
@@ -146,6 +146,14 @@ function finalizarCompra() {
         confirmButtonText: 'Pagar',
         cancelButtonText: 'Mejor mas tarde'
 
-    });
+    }).then((result) => {
+        if (result.isConfirmed) {
+            carrito = [];
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            mostrarCarrito();
+        } else {
+            mostrarCarrito();
+        }
 
+    });
 }

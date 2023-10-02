@@ -63,6 +63,7 @@
         "nombre": "Lazo del Amor",
         "deExterior": true,
         "deInterior": false,
+        "imagenURL": "img/estrella.jpg",
         "precio": 222,
         "enStock": 30,
         "enOferta": false
