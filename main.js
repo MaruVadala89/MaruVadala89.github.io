@@ -1,57 +1,58 @@
 let containerDeProductos = document.getElementById("containerDeProductos");
 
 
-async function cargarProductos () {
+async function cargarProductos() {
 
     containerDeProductos.innerHTML = "";
 
     const response = await fetch("datos.json");
     const data = await response.json();
 
-    data.forEach((el,index) => {
-    
-    let card = document.createElement("div");
-    card.className = "product-card";
+    data.forEach((el, index) => {
 
-    /*let img = document.createElement("img");
-        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${idx + 1}.png`
-        card.appendChild(img);*/
+        let card = document.createElement("div");
+        card.className = "product-card";
 
-    let title = document.createElement("h3");
-    title.innerText = `Nombre: ${el.nombre}`;
+        let img = document.createElement("img");
+        img.src = `img/${el.id}-${el.deInterior ? 'interior' : 'exterior'}-${el.nombre.toLowerCase()}.jpg`;
+        img.alt = `Imagen de ${el.nombre}`;
+        card.appendChild(img);
 
-    card.appendChild(title);
+        let title = document.createElement("h3");
+        title.innerText = `Nombre: ${el.nombre}`;
 
-    let price = document.createElement("p");
-    price.innerText = `Precio: $${el.precio}`;
+        card.appendChild(title);
 
-    card.appendChild(price);
+        let price = document.createElement("p");
+        price.innerText = `Precio: $${el.precio}`;
 
-    let buttonAdd = document.createElement("button");
-    buttonAdd.innerText = `Agregar al carrito`;
-    buttonAdd.className = "btn-secundario";
+        card.appendChild(price);
 
-    buttonAdd.onclick = () => agregarAlCarrito(el.id)
+        let buttonAdd = document.createElement("button");
+        buttonAdd.innerText = `Agregar al carrito`;
+        buttonAdd.className = "btn-secundario";
 
-    card.appendChild(buttonAdd);
+        buttonAdd.onclick = () => agregarAlCarrito(el.id)
 
-    containerDeProductos.appendChild(card);
+        card.appendChild(buttonAdd);
 
-   });
+        containerDeProductos.appendChild(card);
+
+    });
 
 }
 
-cargarProductos ();
+cargarProductos();
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
-let btnMostrar = document.getElementById ("btnMostrar");
-let btnOcultar = document.getElementById ("btnOcultar");
-let btnLimpiar = document.getElementById ("btnLimpiar");
-let btnFinalizar = document.getElementById ("btnFinalizar");
+let btnMostrar = document.getElementById("btnMostrar");
+let btnOcultar = document.getElementById("btnOcultar");
+let btnLimpiar = document.getElementById("btnLimpiar");
+let btnFinalizar = document.getElementById("btnFinalizar");
 
 
-btnMostrar.onclick = mostrarCarrito; 
+btnMostrar.onclick = mostrarCarrito;
 btnOcultar.onclick = ocultarCarrito;
 btnLimpiar.onclick = limpiarCarrito;
 btnFinalizar.onclick = finalizarCompra;
