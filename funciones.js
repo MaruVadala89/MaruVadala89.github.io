@@ -106,10 +106,11 @@ function eliminarProducto(index) {
 }
 
 
+
 function ocultarCarrito() {
     let divCarrito = document.getElementById("cart");
     divCarrito.innerHTML = "";
-}
+} 
 
 
 function limpiarCarrito() {

@@ -85,8 +85,6 @@ h3 p {
 
 .carritoContainer {
   flex-basis: calc(10% - 1rem);
-  margin-right: 1rem;
-  margin-bottom: 1rem;
   background-color: pink;
   padding: 3rem;
 }
