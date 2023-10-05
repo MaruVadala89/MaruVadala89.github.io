@@ -28,8 +28,14 @@ async function agregarAlCarrito(id) {
 function mostrarCarrito() {
 
     let divCarrito = document.getElementById("cart");
-
+    let carritoContainer = document.getElementById ("carritoContainer");
     divCarrito.innerHTML = "";
+    
+    if (carrito.length === 0) {
+        carritoContainer.style.display = "none";
+    } else {
+        carritoContainer.style.display = "block";
+    }
 
     carrito.forEach((el, index) => {
 

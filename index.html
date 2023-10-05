@@ -1,4 +1,3 @@
-
 <html>
 
 <head>
@@ -13,33 +12,64 @@
 
 <body>
 
-    <nav>
+    <header>
+        <h2 class=titulo>Adopta a una <span> planta </span> </h02>
+    </header>
 
-    </nav>
 
-    <div class="container" id="containerDeProductos"></div>
+    <div class="navegacion">
+        <nav>
+            <ul>
+                <li class="inicio"><a href="index.html">Inicio</a></li>
+                <li><a class="btn-primario" id="btnFinalizar">Comprar</a></li>
+                <li><a class="btn-primario" id="btnLimpiar">Vaciar Carrito</a></li>
+                <li><a class="btn-primario" id="btnMostrar">Mostrar</a></li>
+                <li><a class="btn-primario" id="btnOcultar">Ocultar</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <div class="carritoContainer">
+   
+    <div class="totalContainer">
 
-        <div class="carrito">
-            <h2>Carrito</h2>
+        <div class="container" id="containerDeProductos"></div>
+
+
+        <div class="carritoContainer" id="carritoContainer">
+
+            <div class="carrito">
+                <h2>Carrito</h2>
+            </div>
+
+            <div class="cart-container" id="cart"></div>
+
         </div>
-
-        <div> <!--botones-->
-            <a class="btn-primario" id="btnMostrar">Mostrar</a> 
-            <a class="btn-primario" id="btnOcultar">Ocultar</a> 
-            <a class="btn-primario" id="btnLimpiar">Limpiar</a> 
-            <a class="btn-primario" id="btnFinalizar">Comprar</a> 
-        </div>
-
-        <div class="cart-container" id="cart"></div>
 
     </div>
 
-    
+    <div class="grid-conteiner">
+        <div class="grid-item"></div>
+        <div class="grid-item"></div> 
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+
+    </div>
+
+    <footer class="footer-contenedor">
+        <p class="todos">© Copyright 2023 -Todos los derechos reservados - Adopta una Planta</p>
+    </footer>
+
+
     <script src="funciones.js"></script>
     <script src="main.js"></script>
-    
-    
+
+
 </body>
+
 </html>

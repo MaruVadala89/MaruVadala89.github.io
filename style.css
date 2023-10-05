@@ -1,73 +1,173 @@
-*
-{
-  padding: 0%;
-  margin: 0%;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 16px;
+}
+
+header {
+
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+  background-color: rgb(61, 150, 61);
+  color: black;
 
 }
 
-html {font-size: 62.5%;}
-body {font-size: 16px;}
+header span {
+  color: yellowgreen;
+}
+.navegacion {
+  width: 100%;
+  background-color: rgb(131, 192, 90);
+  padding: 2rem; 
+  color: black;
+}
 
+
+ul {
+  display: flex; 
+  justify-content: space-evenly;
+  list-style: none;
+}
 
 .btn-primario {
-    background-color: darkblue;
-    color:aliceblue;
-    padding: 1rem 3rem;
-    border-radius: 2rem;
-    border: none;
-    text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 1rem 3rem;
+  border: none;
+  text-decoration: none;
 }
 
 .btn-primario:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .div-cantidad {
-    display: flex;
+  display: flex;
 }
 
-    
+.navegacion ul li a {
+  text-decoration: none;
+  color: rgb(15, 15, 6);
+  font-weight: bold;
+}
+
 .product-card {
-
-    border: solid 1px black;
-    border-radius: 1rem;
-    padding: 1rem;
-    margin: 1rem;
-
+  justify-content: center;
+  padding: 1rem;
+  margin: 1rem;
 }
+
+h3 p {
+  justify-content: center;
+}
+.totalContainer {
+  display: flex;
+  flex: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.container {
+  flex-basis: calc(75% - 1rem);
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.carritoContainer {
+  flex-basis: calc(25% - 1rem);
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  background-color: pink;
+  padding: 3rem;
+}
+
+.carrito {
+  display: flex;
+  justify-content: center;
+}
+
+.product-card {
+  display: flex;
+  background-color: blue;
+}
+
+.footer-contenedor {
+  height: 80px;
+  color: rgb(227, 241, 241);
+  background-color: rgb(61, 150, 61);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+/* Esto ya venia armado*/
 
 .loader {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    position: relative;
-    animation: rotate 1s linear infinite
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid green;
+  animation: prixClipFix 2s linear infinite;
+}
+
+.loader::after {
+  border-color: #0026ff;
+  animation: prixClipFix 2s linear infinite, rotate 0.5s linear infinite reverse;
+  inset: 6px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg)
   }
 
-  .loader::before , .loader::after {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    inset: 0px;
-    border-radius: 50%;
-    border: 5px solid green;
-    animation: prixClipFix 2s linear infinite ;
+  100% {
+    transform: rotate(360deg)
   }
-  .loader::after{
-    border-color: #0026ff;
-    animation: prixClipFix 2s linear infinite , rotate 0.5s linear infinite reverse;
-    inset: 6px;
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
   }
 
-  @keyframes rotate {
-    0%   {transform: rotate(0deg)}
-    100%   {transform: rotate(360deg)}
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
   }
 
-  @keyframes prixClipFix {
-      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
-      25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
-      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
-      75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
-      100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
   }
+
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+  }
+}
