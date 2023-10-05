@@ -142,11 +142,9 @@ function finalizarCompra() {
     let precioTotal = carrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
 
 
-
-
     Swal.fire({
-        title: 'Compra Finalizada',
-        html: `Gracias por tu compra! <br>Precio Total: $${precioTotal}`,
+        title: 'Inicia tu compra',
+        html: `Precio Total: $${precioTotal}`,
         text: '!Gracias por adoptar una plantita!',
         icon: 'success',
         showCancelButton: true,

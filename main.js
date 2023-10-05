@@ -20,11 +20,13 @@ async function cargarProductos() {
 
         let title = document.createElement("h3");
         title.innerText = `Nombre: ${el.nombre}`;
-
+        title.className = "title";
+        
         card.appendChild(title);
 
         let price = document.createElement("p");
         price.innerText = `Precio: $${el.precio}`;
+        price.className = "price";
 
         card.appendChild(price);
 
