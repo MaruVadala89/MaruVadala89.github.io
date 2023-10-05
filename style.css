@@ -78,13 +78,13 @@ h3 p {
 }
 
 .container {
-  flex-basis: calc(75% - 1rem);
+  flex-basis: calc(90% - 1rem);
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
 
 .carritoContainer {
-  flex-basis: calc(25% - 1rem);
+  flex-basis: calc(10% - 1rem);
   margin-right: 1rem;
   margin-bottom: 1rem;
   background-color: pink;
@@ -97,8 +97,8 @@ h3 p {
 }
 
 .product-card {
-  display: flex;
-  background-color: blue;
+  display: inline-block;
+  background-color: bisque;
 }
 
 .footer-contenedor {
